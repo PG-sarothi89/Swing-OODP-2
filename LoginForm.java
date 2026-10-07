@@ -42,7 +42,6 @@ public class LoginForm extends JFrame {
         gbc.insets = new Insets(10, 8, 10, 8);
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        Font labelFont = new Font("Arial", Font.BOLD, 13);
         Font fieldFont = new Font("Arial", Font.PLAIN, 14);
 
         // Username row

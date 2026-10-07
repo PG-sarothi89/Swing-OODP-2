@@ -135,14 +135,12 @@ public class ElectricityBillCalculator extends JFrame {
         bottomPanel.add(totalLabel, BorderLayout.SOUTH);
 
         add(titleLabel, BorderLayout.NORTH);
-        add(inputPanel, BorderLayout.NORTH);  // overrides, so use CENTER below
 
         JPanel mainCenter = new JPanel(new BorderLayout(5, 5));
         mainCenter.add(inputPanel, BorderLayout.NORTH);
         mainCenter.add(buttonPanel, BorderLayout.CENTER);
         mainCenter.add(bottomPanel, BorderLayout.SOUTH);
 
-        add(titleLabel, BorderLayout.NORTH);
         add(mainCenter, BorderLayout.CENTER);
 
         // Calculate action
@@ -209,23 +207,23 @@ public class ElectricityBillCalculator extends JFrame {
 
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("  Units Consumed     : %.0f units%n", units));
-        sb.append("  ─────────────────────────────────────────%n".formatted());
+        sb.append(String.format("  ─────────────────────────────────────────%n"));
         if (slab1Units > 0)
-            sb.append(String.format("  Slab 1 (0-100)     : %.0f × Rs.%.2f = Rs.%.2f%n",
+            sb.append(String.format("  Slab 1 (0-100)     : %.0f x Rs.%.2f = Rs.%.2f%n",
                     slab1Units, RATE1, slab1Cost));
         if (slab2Units > 0)
-            sb.append(String.format("  Slab 2 (101-300)   : %.0f × Rs.%.2f = Rs.%.2f%n",
+            sb.append(String.format("  Slab 2 (101-300)   : %.0f x Rs.%.2f = Rs.%.2f%n",
                     slab2Units, RATE2, slab2Cost));
         if (slab3Units > 0)
-            sb.append(String.format("  Slab 3 (301-500)   : %.0f × Rs.%.2f = Rs.%.2f%n",
+            sb.append(String.format("  Slab 3 (301-500)   : %.0f x Rs.%.2f = Rs.%.2f%n",
                     slab3Units, RATE3, slab3Cost));
         if (slab4Units > 0)
-            sb.append(String.format("  Slab 4 (>500)      : %.0f × Rs.%.2f = Rs.%.2f%n",
+            sb.append(String.format("  Slab 4 (>500)      : %.0f x Rs.%.2f = Rs.%.2f%n",
                     slab4Units, RATE4, slab4Cost));
-        sb.append("  ─────────────────────────────────────────%n".formatted());
+        sb.append(String.format("  ─────────────────────────────────────────%n"));
         sb.append(String.format("  Energy Charges     : Rs.%.2f%n", energyCost));
         sb.append(String.format("  Service Charge     : Rs.%.2f%n", SERVICE_CHARGE));
-        sb.append("  ─────────────────────────────────────────%n".formatted());
+        sb.append(String.format("  ─────────────────────────────────────────%n"));
         sb.append(String.format("  TOTAL BILL         : Rs.%.2f", totalBill));
 
         breakdownArea.setText(sb.toString());

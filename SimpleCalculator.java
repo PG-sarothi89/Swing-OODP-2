@@ -28,8 +28,8 @@ public class SimpleCalculator extends JFrame {
         gbc.insets = new Insets(8, 8, 8, 8);
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        Font fieldFont = new Font("Arial", Font.PLAIN, 14);
         Font labelFont = new Font("Arial", Font.BOLD, 13);
+        Font fieldFont = new Font("Arial", Font.PLAIN, 14);
 
         gbc.gridx = 0; gbc.gridy = 0;
         JLabel lbl1 = new JLabel("Number 1:");
